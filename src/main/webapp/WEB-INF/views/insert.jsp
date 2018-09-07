@@ -16,25 +16,29 @@
 </head>
 <body>
 ${requestScope.message}
-<form action="/user/userInsert" method="POST">
-    <div class="col-sm-9 col-md-6 col-lg-4" style="background-color: #dedef8; box-shadow: inset 1px -1px 1px #444,
-                                                   inset -1px 1px 1px #444;">
-        <p>Login name:
-            <div class="col-xs-3 col-sm-3">
-            <input class="form-control" type="text" name="loginname" />
+<br><br><br><br>
+<div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+    <form action="/user/userInsert" method="POST">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">新增用户</h3>
             </div>
-            <br/>
-        </p>
-        <br/>
-        <p>Password:
-            <div class="col-xs-3 col-sm-3">
-            <input class="form-control" type="text" name="password" />
+            <div class="panel-body">
+                <label class="control-label">账号: </label>
+                <input class="form-control" type="text" name="loginname" />
+                <br/>
+                <label class="control-label">密码: </label>
+                <input class="form-control" type="text" name="password" />
+                <br/>
+                <input type="submit" class="btn btn-primary" />
             </div>
-            <br/>
-        </p>
-        <br/>
-        <input type="submit" class="btn btn-primary" />
+        </div>
+    </form>
     </div>
-</form>
+    <div class="col-md-4"></div>
+
+</div>
 </body>
 </html>
