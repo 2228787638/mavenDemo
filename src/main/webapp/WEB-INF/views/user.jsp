@@ -30,8 +30,9 @@
         <div class="row" style="margin-top: 20px;">
             <div class="col-md-12">
                 <button class="btn-primary btn-sm" style="margin-left: 74%;">
-                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-                    新增
+                    <a href="/user/goToNewInsert">
+                        <span class="glyphicon glyphicon-plus" aria-hidden="true"><font color = "white">新增</font></span>
+                    </a>
                 </button>
             </div>
         </div>
@@ -56,12 +57,14 @@
                             <th>${emp.role}</th>
                             <th>
                                 <button class="btn-primary btn-sm">
-                                    <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
-                                    编辑
+                                    <a href="/user/userModify?id=${emp.id}">
+                                       <span class="glyphicon glyphicon-pencil" aria-hidden="true"><font color="white">编辑</font></span>
+                                    </a>
                                 </button>
                                 <button class="btn-danger btn-sm">
-                                    <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-                                    删除
+                                    <a href="/user/userRemove?id=${emp.id}">
+                                        <span class="glyphicon glyphicon-trash" aria-hidden="true"><font color="white">删除</font></span>
+                                    </a>
                                 </button>
                             </th>
                         </tr>

@@ -11,4 +11,13 @@ public interface UserService {
      * @return 用户分页对象
      */
     PageInfo<User> getUserList(int currentPage, int pageSize);
+
+    String insert(String loginname, String password);
+
+    int remove(Integer id);
+
+    User modified(Integer id);
+
+    int update(User record);
 }
+

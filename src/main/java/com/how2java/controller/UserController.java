@@ -2,12 +2,12 @@ package com.how2java.controller;
 
 import com.github.pagehelper.PageInfo;
 import com.how2java.domain.User;
+import com.how2java.mapper.UserMapper;
 import com.how2java.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
@@ -35,5 +35,44 @@ public class UserController {
         mv.setViewName("user");
 
         return mv;
+    }
+
+    @RequestMapping(value="/goToNewInsert")
+    public ModelAndView goToUserInsert(ModelAndView mv){
+        mv.setViewName("insert");
+        return mv;
+    }
+
+    @RequestMapping(value="/userInsert",method = RequestMethod.POST)
+    public ModelAndView userInsert(ModelAndView mv, @RequestParam(value = "loginname") String loginname,
+                                  @RequestParam(value = "password") String password){
+        String message=userService.insert(loginname,password);
+        mv.addObject("message",message);
+        mv.setViewName("insert");
+        return mv;
+    }
+
+    @RequestMapping(value = "/userRemove", method = RequestMethod.GET)
+    public String userRemove(ModelAndView mv, @RequestParam(value = "id") Integer id){
+        Integer ID = userService.remove(id);
+        return "redirect:userList";
+    }
+
+    @RequestMapping(value= "/userModify")
+    public ModelAndView goToUserModified(ModelAndView mv, @RequestParam(value = "id") Integer id){
+        User modify = userService.modified(id);
+        mv.addObject("user",modify);
+        mv.setViewName("modified");
+        return mv;
+    }
+
+    @RequestMapping(value="/userModified", method = RequestMethod.POST)
+    public String userModify(ModelAndView mv, @ModelAttribute User user){
+        User userpojo = userService.modified(user.getId());
+        userpojo.setLoginname(user.getLoginname());
+        userpojo.setPassword(user.getPassword());
+        userpojo.setRole(user.getRole());
+        userService.update(userpojo);
+        return "redirect:userList";
     }
 }

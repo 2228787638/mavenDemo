@@ -24,4 +24,37 @@ public class UserServiceimpl implements UserService{
         PageInfo<User> pageInfo = new PageInfo<>(docs);
         return pageInfo;
     }
+
+    @Override
+    public String insert(String loginname, String password) {
+        User user=userMapper.getUserByLoginName(loginname);
+        if(user==null){
+            User userpojo=new User();
+            userpojo.setLoginname(loginname);
+            userpojo.setPassword(password);
+            userpojo.setRole(1);
+            userMapper.insert(userpojo);
+            return "新增成功";
+        }else{
+            return "账号已经存在";
+        }
+    }
+
+    @Override
+    public int remove(Integer id){
+        userMapper.deleteByPrimaryKey(id);
+        return 0;
+    }
+
+    @Override
+    public User modified(Integer id){
+        User user=userMapper.selectByPrimaryKey(id);
+        return user;
+    }
+
+    @Override
+    public int update(User record){
+        int updated = userMapper.updateByPrimaryKey(record);
+        return updated;
+    }
 }
