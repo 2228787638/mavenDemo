@@ -19,5 +19,9 @@ public interface UserService {
     User modified(Integer id);
 
     int update(User record);
+
+    String registerInsert(String loginname, String password);
+
+    String login(String loginname, String password);
 }
 

@@ -8,9 +8,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title></title>
+    <title>首页</title>
 </head>
 <body>
-
+    部门管理系统
 </body>
 </html>

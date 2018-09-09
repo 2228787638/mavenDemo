@@ -1,18 +1,15 @@
 package com.how2java.domain;
 
-import org.hibernate.validator.constraints.NotEmpty;
-
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Null;
-
 public class User {
     private Integer id;
-    @NotEmpty(message = "账号不能为空")
+
     private String loginname;
-    @NotEmpty(message = "密码不能为空")
+
     private String password;
 
     private Integer role;
+
+    private Integer departid;
 
     public Integer getId() {
         return id;
@@ -44,5 +41,13 @@ public class User {
 
     public void setRole(Integer role) {
         this.role = role;
+    }
+
+    public Integer getDepartid() {
+        return departid;
+    }
+
+    public void setDepartid(Integer departid) {
+        this.departid = departid;
     }
 }

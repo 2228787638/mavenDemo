@@ -41,6 +41,34 @@ public class UserServiceimpl implements UserService{
     }
 
     @Override
+    public String registerInsert(String loginname, String password){
+        User user = userMapper.getUserByLoginName(loginname);
+        if(user==null){
+            User user1 = new User();
+            user1.setLoginname(loginname);
+            user1.setPassword(password);
+            userMapper.insert(user1);
+            return "新增成功";
+        }else{
+            return "用户名已经存在";
+        }
+    }
+
+    @Override
+    public String login(String loginname, String password){
+        User user = userMapper.getUserByLoginName(loginname);
+        if(user==null){
+            return "用户名不存在";
+        }else{
+            if(user.getPassword().equals(password)){
+                return "登录成功";
+            }else{
+                return "登录失败";
+            }
+        }
+    }
+
+    @Override
     public int remove(Integer id){
         userMapper.deleteByPrimaryKey(id);
         return 0;

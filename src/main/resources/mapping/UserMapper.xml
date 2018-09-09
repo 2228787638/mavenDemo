@@ -6,9 +6,10 @@
     <result column="loginname" jdbcType="VARCHAR" property="loginname" />
     <result column="password" jdbcType="VARCHAR" property="password" />
     <result column="role" jdbcType="INTEGER" property="role" />
+    <result column="departid" jdbcType="INTEGER" property="departid" />
   </resultMap>
   <sql id="Base_Column_List">
-    id, loginname, password, role
+    id, loginname, password, role, departid
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
@@ -22,9 +23,9 @@
   </delete>
   <insert id="insert" parameterType="com.how2java.domain.User">
     insert into user (id, loginname, password, 
-      role)
+      role, departid)
     values (#{id,jdbcType=INTEGER}, #{loginname,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
-      #{role,jdbcType=INTEGER})
+      #{role,jdbcType=INTEGER}, #{departid,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.how2java.domain.User">
     insert into user
@@ -41,6 +42,9 @@
       <if test="role != null">
         role,
       </if>
+      <if test="departid != null">
+        departid,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -54,6 +58,9 @@
       </if>
       <if test="role != null">
         #{role,jdbcType=INTEGER},
+      </if>
+      <if test="departid != null">
+        #{departid,jdbcType=INTEGER},
       </if>
     </trim>
   </insert>
@@ -69,6 +76,9 @@
       <if test="role != null">
         role = #{role,jdbcType=INTEGER},
       </if>
+      <if test="departid != null">
+        departid = #{departid,jdbcType=INTEGER},
+      </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
@@ -76,10 +86,10 @@
     update user
     set loginname = #{loginname,jdbcType=VARCHAR},
       password = #{password,jdbcType=VARCHAR},
-      role = #{role,jdbcType=INTEGER}
+      role = #{role,jdbcType=INTEGER},
+      departid = #{departid,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
-
   <select id="selectUserList" resultMap="BaseResultMap">
     select *
     from user

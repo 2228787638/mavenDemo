@@ -13,9 +13,9 @@ public interface DepartService {
      * @param pageSize 每页的数据大小
      * @return 用户分页对象
      */
-    PageInfo<Depart> getDepartList(int currentPage, int pageSize);
+    PageInfo<Depart> getDepartList(Integer currentPage, Integer pageSize);
 
-    String insert(String department, String description);
+    String insert(Depart depart);
 
     int remove(Integer id);
 

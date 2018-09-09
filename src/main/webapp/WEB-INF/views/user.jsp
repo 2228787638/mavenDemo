@@ -45,6 +45,7 @@
                         <th>账号</th>
                         <th>密码</th>
                         <th>身份</th>
+                        <th>部门</th>
                         <th>操作</th>
                     </tr>
                     <%--遍历数据--%>
@@ -55,6 +56,7 @@
                             <th>${emp.loginname}</th>
                             <th>${emp.password}</th>
                             <th>${emp.role}</th>
+                            <th>${emp.departid}</th>
                             <th>
                                 <button class="btn-primary btn-sm">
                                     <a href="/user/userModify?id=${emp.id}">
@@ -73,6 +75,7 @@
             </div>
 
         </div>
+
         <%--显示分页信息--%>
         <div class="row">
             <%--分页信息--%>
