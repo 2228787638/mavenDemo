@@ -8,6 +8,15 @@
     <result column="role" jdbcType="INTEGER" property="role" />
     <result column="departid" jdbcType="INTEGER" property="departid" />
   </resultMap>
+  <resultMap id="BaseResultMap1" type="com.how2java.pojo.UserDTO">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="loginname" jdbcType="VARCHAR" property="loginname" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="role" jdbcType="INTEGER" property="role" />
+    <association property="depart" column="departid"
+                 select="com.how2java.mapper.DepartMapper.selectByPrimaryKey"
+                 javaType="com.how2java.domain.Depart"/>
+  </resultMap>
   <sql id="Base_Column_List">
     id, loginname, password, role, departid
   </sql>
@@ -90,7 +99,7 @@
       departid = #{departid,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <select id="selectUserList" resultMap="BaseResultMap">
+  <select id="selectUserList" resultMap="BaseResultMap1">
     select *
     from user
   </select>

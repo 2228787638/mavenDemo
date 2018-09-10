@@ -44,6 +44,7 @@
                     <th>departname</th>
                     <th>description</th>
                     <th>personcount</th>
+                    <th>操作</th>
                 </tr>
                 <%--遍历数据--%>
                 <c:forEach items="${requestScope.departList.list}" var="emp">
