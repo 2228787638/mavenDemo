@@ -1,5 +1,7 @@
 package com.how2java.domain;
 
+import org.springframework.web.multipart.MultipartFile;
+
 public class User {
     private Integer id;
 

@@ -85,4 +85,8 @@ public class UserServiceimpl implements UserService{
         int updated = userMapper.updateByPrimaryKey(record);
         return updated;
     }
+    @Override
+    public User getUserByLoginname(String loginname){
+        return userMapper.getUserByLoginName(loginname);
+    }
 }

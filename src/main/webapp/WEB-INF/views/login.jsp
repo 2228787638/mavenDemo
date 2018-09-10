@@ -21,6 +21,7 @@ ${requestScope.message}
     <div class="col-md-4"></div>
     <div class="col-md-4">
         <form action="/user/login" method="POST">
+            <font color="red">${requestScope.message}</font>
             <div class="panel panel-primary">
                 <div class="panel-heading">
                     <h3 class="panel-title">登录</h3>
@@ -30,7 +31,7 @@ ${requestScope.message}
                     <input class="form-control" type="text" name="loginname" />
                     <br/>
                     <label class="control-label">密码: </label>
-                    <input class="form-control" type="text" name="password" />
+                    <input class="form-control" type="password" name="password" />
                     <br/>
                     <input type="submit" class="btn btn-primary" />
                 </div>

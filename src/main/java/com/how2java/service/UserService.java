@@ -23,5 +23,12 @@ public interface UserService {
     String registerInsert(String loginname, String password);
 
     String login(String loginname, String password);
+
+    /**
+     * 通过loginname获取User实体
+     * @param loginname 账号
+     * @return User实体
+     */
+    User getUserByLoginname(String loginname);
 }
 
