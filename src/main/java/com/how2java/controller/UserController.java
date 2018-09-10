@@ -88,7 +88,6 @@ public class UserController {
         String message = userService.login(loginname,password);
         if(message.equals("登录成功")){
             model.addAttribute(userService.getUserByLoginname(loginname));
-
             return "redirect:userList";
         }else if (message.equals("登录失败")){
             return "redirect:gotologin";
