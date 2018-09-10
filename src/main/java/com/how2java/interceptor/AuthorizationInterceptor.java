@@ -40,7 +40,7 @@ public class AuthorizationInterceptor implements HandlerInterceptor {
         if(!flag){
             User user = (User) request.getSession().getAttribute("user");
             HttpSession session = request.getSession();
-            ServletContext application = session.getServletContext();
+
             if(user == null){
                 System.out.println("AuthorizationInterceptor拦截请求: ");
                 //request.setAttribute("message", "请先登录再访问网站");
