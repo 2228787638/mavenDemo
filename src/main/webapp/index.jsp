@@ -10,9 +10,9 @@
 </head>
 <body>
 <h3>管理系统</h3>
-<a href="/user/register">注册</a>
+<a href="/user/goTORegister">注册</a>
 <br/>
-<a href="/user/login">登录</a>
+<a href="/user/gotologin">登录</a>
 <br/>
 <a href="/user/userList">用户管理页面</a>
 <br/>

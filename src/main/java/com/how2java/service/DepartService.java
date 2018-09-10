@@ -1,6 +1,7 @@
 package com.how2java.service;
 
 import com.github.pagehelper.PageInfo;
+import com.how2java.domain.Depart;
 
 /**
  * Created by Administrator on 2018/9/8.

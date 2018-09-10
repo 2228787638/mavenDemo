@@ -1,6 +1,7 @@
 package com.how2java.controller;
 
 import com.github.pagehelper.PageInfo;
+import com.how2java.domain.Depart;
 import com.how2java.service.DepartService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;

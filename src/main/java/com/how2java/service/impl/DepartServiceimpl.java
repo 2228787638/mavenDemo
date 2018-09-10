@@ -6,6 +6,8 @@ package com.how2java.service.impl;
 
 import com.github.pagehelper.PageInfo;
 import com.github.pagehelper.PageHelper;
+import com.how2java.domain.Depart;
+import com.how2java.mapper.DepartMapper;
 import com.how2java.service.DepartService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
