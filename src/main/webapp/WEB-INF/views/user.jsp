@@ -56,7 +56,8 @@
                             <th>${emp.loginname}</th>
                             <th>${emp.password}</th>
                             <th>${emp.role}</th>
-                            <th>${emp.departid}</th>
+                            <th>${emp.depart.departname}</th>
+
                             <th>
                                 <button class="btn-primary btn-sm">
                                     <a href="/user/userModify?id=${emp.id}">
