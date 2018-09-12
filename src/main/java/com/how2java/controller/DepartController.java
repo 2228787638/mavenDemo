@@ -73,4 +73,16 @@ public class DepartController {
         departService.update(depart1);
         return "redirect:departList";
     }
+
+    @RequestMapping(value= "/departDisplayUser")
+    public ModelAndView goToDepartDisplayUser(ModelAndView mv, @RequestParam(value = "id") Integer id){
+        Depart displayUser = departService.displayDepartUser(id);
+        mv.setViewName("/depart/displayDepartUser");
+        return mv;
+    }
+
+    @RequestMapping(value="/displayDepartUser", method = RequestMethod.POST)
+    public String departDisplayUser(ModelAndView mv, @ModelAttribute Depart depart){
+        return "redirect:userList";
+    }
 }

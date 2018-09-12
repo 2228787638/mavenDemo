@@ -22,4 +22,6 @@ public interface DepartService {
     Depart modified(Integer id);
 
     int update(Depart record);
+
+    Depart displayDepartUser(Integer id);
 }

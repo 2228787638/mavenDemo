@@ -58,6 +58,12 @@ public class DepartServiceimpl implements DepartService {
     }
 
     @Override
+    public Depart displayDepartUser(Integer id){
+        Depart depart = departMapper.displayDepartUser(id);
+        return depart;
+    }
+
+    @Override
     public int update(Depart record){
         int updated = departMapper.updateByPrimaryKey(record);
         return updated;

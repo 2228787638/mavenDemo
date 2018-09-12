@@ -3,6 +3,9 @@ package com.how2java.pojo;
 import com.how2java.domain.Depart;
 import com.how2java.domain.User;
 
+/**
+ * @author Administrator
+ */
 public class UserDTO extends User{
     /**
      * 用户部门

@@ -4,6 +4,9 @@ import com.how2java.domain.User;
 
 import java.util.List;
 
+/**
+ * @author Administrator
+ */
 public interface UserMapper {
     int deleteByPrimaryKey(Integer id);
 
@@ -20,4 +23,6 @@ public interface UserMapper {
     List<User> selectUserList();
 
     User getUserByLoginName(String loginName);
+
+    User selectUserByDepartid(Integer id);
 }
