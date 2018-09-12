@@ -7,7 +7,9 @@ package com.how2java.service.impl;
 import com.github.pagehelper.PageInfo;
 import com.github.pagehelper.PageHelper;
 import com.how2java.domain.Depart;
+import com.how2java.domain.User;
 import com.how2java.mapper.DepartMapper;
+import com.how2java.mapper.UserMapper;
 import com.how2java.service.DepartService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,6 +21,9 @@ public class DepartServiceimpl implements DepartService {
 
     @Autowired
     private DepartMapper departMapper;
+
+    @Autowired
+    private UserMapper userMapper;
 
     @Override
     public PageInfo<Depart> getDepartList(Integer currentPage, Integer pageSize){
@@ -58,9 +63,11 @@ public class DepartServiceimpl implements DepartService {
     }
 
     @Override
-    public Depart displayDepartUser(Integer id){
-        Depart depart = departMapper.displayDepartUser(id);
-        return depart;
+    public PageInfo<User> displayDepartUser(Integer id,Integer currentPage, Integer pageSize){
+        PageHelper.startPage(currentPage, pageSize);
+        List<User> docs = userMapper.selectUserByDepartid(id);
+        PageInfo<User> pageInfo = new PageInfo<>(docs);
+        return pageInfo;
     }
 
     @Override

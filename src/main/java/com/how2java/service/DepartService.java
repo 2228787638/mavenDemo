@@ -2,6 +2,7 @@ package com.how2java.service;
 
 import com.github.pagehelper.PageInfo;
 import com.how2java.domain.Depart;
+import com.how2java.domain.User;
 
 /**
  * Created by Administrator on 2018/9/8.
@@ -23,5 +24,5 @@ public interface DepartService {
 
     int update(Depart record);
 
-    Depart displayDepartUser(Integer id);
+    PageInfo<User> displayDepartUser(Integer id, Integer currentPage, Integer pageSize);
 }

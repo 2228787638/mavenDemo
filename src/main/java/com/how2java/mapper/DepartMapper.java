@@ -20,6 +20,4 @@ public interface DepartMapper {
     Depart checkDepartName(String departName);
 
     List<Depart> selectDepartList();
-
-    Depart displayDepartUser(Integer id);
 }

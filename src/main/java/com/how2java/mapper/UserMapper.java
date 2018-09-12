@@ -24,5 +24,5 @@ public interface UserMapper {
 
     User getUserByLoginName(String loginName);
 
-    User selectUserByDepartid(Integer id);
+    List<User> selectUserByDepartid(Integer id);
 }

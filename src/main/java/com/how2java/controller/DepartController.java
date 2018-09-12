@@ -2,6 +2,7 @@ package com.how2java.controller;
 
 import com.github.pagehelper.PageInfo;
 import com.how2java.domain.Depart;
+import com.how2java.domain.User;
 import com.how2java.service.DepartService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -75,8 +76,11 @@ public class DepartController {
     }
 
     @RequestMapping(value= "/departDisplayUser")
-    public ModelAndView goToDepartDisplayUser(ModelAndView mv, @RequestParam(value = "id") Integer id){
-        Depart displayUser = departService.displayDepartUser(id);
+    public ModelAndView goToDepartDisplayUser(ModelAndView mv, @RequestParam(value = "id") Integer id,
+                                              @RequestParam(value = "pageNum",required=true,defaultValue="1") Integer pageNum,
+                                              @RequestParam(value = "pageSize",required=false,defaultValue="10") Integer pageSize){
+        PageInfo<User> userPageInfo = departService.displayDepartUser(id,pageNum,pageSize);
+        mv.addObject("userPageInfo", userPageInfo);
         mv.setViewName("/depart/displayDepartUser");
         return mv;
     }
