@@ -81,12 +81,12 @@ public class DepartController {
                                               @RequestParam(value = "pageSize",required=false,defaultValue="10") Integer pageSize){
         PageInfo<User> userPageInfo = departService.displayDepartUser(id,pageNum,pageSize);
         mv.addObject("userPageInfo", userPageInfo);
-        mv.setViewName("/depart/displayDepartUser");
+        mv.setViewName("depart/departDisplayUser");
         return mv;
     }
 
     @RequestMapping(value="/displayDepartUser", method = RequestMethod.POST)
     public String departDisplayUser(ModelAndView mv, @ModelAttribute Depart depart){
-        return "redirect:userList";
+        return "redirect:departList";
     }
 }

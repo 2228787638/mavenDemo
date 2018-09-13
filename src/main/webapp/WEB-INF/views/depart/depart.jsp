@@ -72,7 +72,6 @@
                                     <span class="glyphicon glyphicon-trash" aria-hidden="true"><font color="white">删除</font></span>
                                 </a>
                             </button>
-
                         </th>
                     </tr>
                 </c:forEach>
