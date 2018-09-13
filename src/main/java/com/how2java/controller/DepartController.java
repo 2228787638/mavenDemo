@@ -84,9 +84,4 @@ public class DepartController {
         mv.setViewName("depart/departDisplayUser");
         return mv;
     }
-
-    @RequestMapping(value="/displayDepartUser", method = RequestMethod.POST)
-    public String departDisplayUser(ModelAndView mv, @ModelAttribute Depart depart){
-        return "redirect:departList";
-    }
 }

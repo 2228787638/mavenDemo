@@ -35,7 +35,7 @@
                     <th>身份</th>
                 </tr>
                 <%--遍历数据--%>
-                <c:forEach items="${requestScope.departList.list}" var="emp">
+                <c:forEach items="${requestScope.userPageInfo.list}" var="emp">
                     <tr>
                         <th>${emp.id}</th>
                         <th>${emp.loginname}</th>
