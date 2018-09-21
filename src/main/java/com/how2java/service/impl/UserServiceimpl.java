@@ -7,15 +7,14 @@ import com.how2java.mapper.UserMapper;
 import com.how2java.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 
 @Service("userService")
+
 public class UserServiceimpl implements UserService{
 
     @Autowired
     private UserMapper userMapper;
-
 
     @Override
     public PageInfo<User> getUserList(int currentPage, int pageSize) {

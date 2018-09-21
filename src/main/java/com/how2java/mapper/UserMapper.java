@@ -1,7 +1,6 @@
 package com.how2java.mapper;
 
 import com.how2java.domain.User;
-
 import java.util.List;
 
 /**
